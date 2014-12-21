@@ -36,20 +36,20 @@ print getResponse()
 # dongle.write('AT+CSCS=?\r')
 # print getResponse()
 
-dongle.write('AT+CSCS="USC2"')
-print getResponse()
+# dongle.write('AT+CSCS="USC2"')
+# print getResponse()
 
-print 'Number = ' + binascii.hexlify('0739332499'.encode('utf16'))
+# print 'Number = ' + binascii.hexlify('0739332499'.encode('utf16'))
 
 # Set the telephone number we want to send to
-dongle.write('AT+CMGS="' + binascii.hexlify('0739332499'.encode('utf16')) + '"\r')
+dongle.write('AT+CMGS="' + '0739332499' + '"\r')
 print getResponse()
 
-print 
+# print 
  
 #### Set the message we want to send
 try:
-    dongle.write(binascii.hexlify('Hej Pjeksa!'.encode('utf16')))
+    dongle.write('Hej Pjeksa!')
 except:
  	print "Unexpected error"
 
