@@ -4,8 +4,9 @@ import io
 import binascii
 import sys
 
-number = sys.argv[1]
-message = sys.argv[2]
+port =    sys.argv[1] # /dev/tty.HUAWEIMobile-Modem
+number =  sys.argv[2] # +46708123456
+message = sys.argv[3] # 'Hi phone!'
 
 # Make sure the message is ASCII friendly. Throws error if not.
 message.decode('ascii')
