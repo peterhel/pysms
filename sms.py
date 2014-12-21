@@ -3,7 +3,13 @@
 import serial
 import io
 import binascii
+import sys
 # Set up the connection to the dongle
+
+number = sys.argv[1]
+message = sys.argv[2]
+message.decode('ascii')
+
 dongle = serial.Serial(port="/dev/tty.HUAWEIMobile-Modem",baudrate=115200,timeout=2,rtscts=0,xonxoff=0)
 # sio = io.TextIOWrapper(io.BufferedRWPair(dongle, dongle))
 print "Connected!"
@@ -46,10 +52,11 @@ dongle.write('AT+CMGS="' + '0739332499' + '"\r')
 print getResponse()
 
 # print 
- 
+
+
 #### Set the message we want to send
 try:
-    dongle.write('Hej Pjeksa!')
+    dongle.write(message)
 except:
  	print "Unexpected error"
 
