@@ -12,7 +12,7 @@ message = sys.argv[3] # 'Hi phone!'
 message.decode('ascii')
 
 # Set up the connection to the dongle
-dongle = serial.Serial(port="/dev/tty.HUAWEIMobile-Modem",baudrate=115200,timeout=2,rtscts=0,xonxoff=0)
+dongle = serial.Serial(port=port,baudrate=115200,timeout=2,rtscts=0,xonxoff=0)
 
 print "Connected!"
 
